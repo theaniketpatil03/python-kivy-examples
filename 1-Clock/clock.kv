@@ -1,2 +1,45 @@
 #:kivy 2.0.0
 
+<Label>:
+    font_name: 'Roboto'
+    font_size: 60
+    markup: True
+
+<RobotoButton@Button>:
+    font_name: 'Roboto'
+    font_size: 25
+    bold: True
+    # background_normal: '1-Clock/button_normal.png'
+    # background_down: '1-Clock/button_down.png'
+    background_color: 0.5, 0.5, 0.5, 1
+    border: (2, 2, 2, 2)
+
+
+BoxLayout:
+    orientation: 'vertical'
+
+    Label:
+        id: time
+        text: '[b]00[/b] : 00 : 00'
+
+    BoxLayout:
+        height: 90
+        orientation: 'horizontal'
+        padding: 20
+        spacing: 20
+        size_hint: (1, None)
+
+        RobotoButton: 
+            id: start_stop
+            text: 'Start'
+            on_press: app.start_stop()
+
+        RobotoButton:
+            id: reset
+            text: 'Reset'
+            on_press: app.reset()
+
+    Label: 
+        id: stopwatch
+        text: '00:00.[size=40]00[/size]'
+    
